@@ -29,6 +29,7 @@ body {
     position: absolute;
     top: 0;
     height: 100%;
+    transition: 0.6s ease-in-out;
 }
 
 .sign-up-container {
@@ -42,13 +43,18 @@ body {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
-    animation: show 0.6s 0.6s ease-in-out forwards;
+    animation: show 0.6s;
 }
 
 @keyframes show {
     0%, 49.99% {
         opacity: 0;
         z-index: 1;
+    }
+
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
     }
 }
 .container.panel-active .login-container {
@@ -149,6 +155,11 @@ a {
     height: 100%;
     overflow: hidden;
     z-index: 100;
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.panel-active .overlay-container{
+    transform: translateX(-100%);
 }
 
 .overlay {
@@ -160,6 +171,10 @@ a {
     height: 100%;
     width: 200%;
     transform: translateX(0);
+}
+
+.container.panel-active .overlay {
+    transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -174,15 +189,24 @@ a {
     height: 100%;
     width: 50%;
     transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
 }
 
 .overlay-left {
     transform: translateX(-20%);
 }
 
+.container.panel-active .overlay-left {
+    transform: translateX(0);
+}
+
 .overlay-right {
     right: 0;
     transform: translateX(0);
+}
+
+.container.panel-active .overlay-right {
+    transform: translateX(20%);
 }
 
 p {

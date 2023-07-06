@@ -1,3 +1,11 @@
-const title = React.createElement("h1", {}, "Hello World");
+const loginButton = document.getElementById('login');
+const signupButton = document.getElementById('signup');
+const container = document.getElementById('container');
 
-ReactDOM.render(title, document.querySelector("app"));
+signupButton.addEventListener('click', () => {
+    container.classList.add('panel-active');
+});
+
+loginButton.addEventListener('click', () => {
+    container.classList.remove('panel-active');
+});
